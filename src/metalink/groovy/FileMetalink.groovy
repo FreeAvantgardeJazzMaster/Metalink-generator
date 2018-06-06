@@ -1,5 +1,7 @@
 package metalink.groovy
 
+import groovy.xml.MarkupBuilder
+
 class FileMetalink {
 
     String name
@@ -21,7 +23,7 @@ class FileMetalink {
 
     def toXML() {
         return "\t<file name=\"" + name + "\">\n" +
-                "\t\t<size>" + size + "<size>\n" +
+                "\t\t<size>" + size + "</size>\n" +
                 "\t\t<hash type=\"md5\">" + hash + "</hash>\n" +
                 "\t\t<url>" + url + "</url>\n" +
                 "\t</file>\n"

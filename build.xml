@@ -35,11 +35,15 @@
 	</target>
 
 	<!-- -->
-	<target name="metalink" depends="build">
-		<taskdef name="metalink" classname="metalink.groovy.MetalinkGenerateTool">
-			<classpath refid="groovy.classpath"/>
-		</taskdef>
-		<metalink />
+
+	<taskdef name="meta4" classname="metalink.groovy.MetalinkGenerateTool">
+		<classpath refid="groovy.classpath"/>
+	</taskdef>
+
+	<target name="metalink-example">
+		<meta4 url="http://zad-zwiwo.com/download/" file="zad-zwiwo.xml">
+			<fileset dir="." />
+		</meta4>
 	</target>
 
 </project>

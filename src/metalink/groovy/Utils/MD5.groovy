@@ -1,4 +1,4 @@
-package metalink.groovy
+package metalink.groovy.Utils
 
 class MD5 {
     def static generate(File file){

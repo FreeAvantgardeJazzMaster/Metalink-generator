@@ -1,5 +1,8 @@
 package metalink.groovy
 
+import metalink.groovy.Model.FileMetalink
+import metalink.groovy.Model.Metalink
+import metalink.groovy.Utils.XmlGenerator
 import org.apache.tools.ant.BuildException
 import org.apache.tools.ant.Task
 import org.apache.tools.ant.types.FileSet
@@ -22,9 +25,15 @@ class MetalinkGenerateTool extends Task{
 
         filesets.each {FileSet fileSet -> generateMetalink(fileSet.getDir()) }
 
+        /*
         println(metalink.toXML())
         def outFile = new File(file + ".xml")
         outFile.text = metalink.toXML()
+
+        */
+
+        XmlGenerator xmlGenerator = new XmlGenerator(metalink, new File(file))
+        xmlGenerator.generate()
     }
 
     void generateMetalink(File dir){

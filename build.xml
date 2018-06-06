@@ -40,7 +40,7 @@
 		<classpath refid="groovy.classpath"/>
 	</taskdef>
 
-	<target name="metalink-example">
+	<target name="metalink">
 		<meta4 url="http://zad-zwiwo.com/download/" file="zad-zwiwo.xml">
 			<fileset dir="." />
 		</meta4>
